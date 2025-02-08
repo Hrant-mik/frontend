@@ -1,4 +1,4 @@
 let numbers = prompt("Imput a number:")
-for (i = 1; i <= numbers; i++){
+for (i = 0; i++ <= numbers; ){
     alert(i * 7)
 }

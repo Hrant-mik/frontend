@@ -1,14 +1,28 @@
+const NATURAL_NUMBERS = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 function calculator(operation){
-    let value = 0
-    if (operation[1] === "*"){
-        value = (operation[0] * operation[2])
-    }else if (operation[1] === "/"){
-        value = (operation[0] / operation[2])
-    }else if (operation[1] === "-"){
-        value = (operation[0] - operation[2])
-    }else if (operation[1] === "+"){
-        value = (operation[0] + operation[2])
+    let operator = ""
+    let numbers
+    for (let i = 0; i <= operation.length; i++){
+        if ((operation[i] === "*") || (operation[i] === "+") ||(operation[i] === "-") ||(operation[i] === "/")){
+            operator += operation[i]
+            numbers = operation.split(operator)
+            break
+        }
     }
-    console.log(value)
+    switch (operator){
+        case "+":
+            console.log(+numbers[0] + +numbers[1])
+            break
+        case "-":
+            console.log(numbers[0] - numbers[1])
+            break
+        case "*":
+            console.log(numbers[0] * numbers[1])
+            break
+        case "/":
+            console.log(numbers[0] / numbers[1])
+            break
+    }
+    
 }
-calculator("5+2")
+calculator("55+2")
